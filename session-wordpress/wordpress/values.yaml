@@ -1,0 +1,29 @@
+#wordpress
+wordpress:
+  name: wordpress
+  namespace: web
+  deployment:
+    image: wordpress:6.2.1-apache
+    replica: 1
+    storage: 10Gi
+  service:
+    port: 80
+    type: LoadBalancer
+
+#MySQL database
+mysql:
+  name: mysql
+  namespace: database
+  deployment:
+    image: mysql:8.0
+    replica: 1
+    storage: 10Gi
+  password: aijana
+  service:
+    port: 3306
+    type: ClusterIP
+
+# Namespaces to create
+namespaces:
+  web: true
+  database: true
