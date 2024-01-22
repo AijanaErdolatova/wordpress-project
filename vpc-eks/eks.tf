@@ -8,9 +8,7 @@ resource "aws_eks_cluster" "eks" {
     endpoint_public_access  = true
     subnet_ids = [
       aws_subnet.public_subnet_1.id,
-      aws_subnet.public_subnet_2.id,
-      aws_subnet.private_subnet_1.id, #remove
-      aws_subnet.private_subnet_2.id  #remove
+      aws_subnet.public_subnet_2.id
     ]
   }
   depends_on = [aws_iam_role_policy_attachment.iam-policy]

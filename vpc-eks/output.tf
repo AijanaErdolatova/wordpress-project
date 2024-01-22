@@ -12,11 +12,9 @@ output "igw_id" {
 output "public_rt_id" {
   value = aws_route_table.public-rt.id
 }
-output "private-rt1" {
-  value = aws_route_table.private-rt1.id
-}
-output "private-rt2" {
-  value = aws_route_table.private-rt2.id
+
+output "private-rt_id" {
+  value = aws_route_table.private-rt.id
 }
 
 output "public-subnet1" {
